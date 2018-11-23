@@ -39,11 +39,11 @@ class prestamoController extends Controller
     public function store(Request $request)
     {
         $prestamo = new Prestamos([
-            'id_libro' => $recuest->get('libro'),
-            'id_estudiante' => $recuest->get('id_estudiante'),
-            'id_empleado' => $recuest->get('id_empleado'),
-            'fecha_prestamo' => $recuest->get('fecha_prestamo'),
-            'fecha_entrega' => $recuest->get('fecha_entrega')
+            'id_libro' => $request->get('id_libro'),
+            'id_estudiante' => $request->get('id_estudiante'),
+            'id_empleado' => $request->get('id_empleado'),
+            'fecha_prestamo' => $request->get('fecha_prestamo'),
+            'fecha_entrega' => $request->get('fecha_entrega')
         ]);
         $prestamo->save();
         return redirect('/biblioteca');

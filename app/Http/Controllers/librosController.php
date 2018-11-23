@@ -38,7 +38,7 @@ class librosController extends Controller
     public function store(Request $request)
     {
         $libro = new Libros([
-            'nombre' => $recuest->get('nombre'),
+            'nombre' => $request->get('nombre'),
             'editorial' => $request->get('editorial'),
             'ano' => $request->get('ano'),
             'ubicacion' => $request->get('ubicacion'),
@@ -59,7 +59,9 @@ class librosController extends Controller
      */
     public function show($id)
     {
-        //
+        $libro = Libros::table('libros')->where('nombre',$id)->orWhere('tipo',$id)->orWhere('area_de_conocimiento',$id)->orWhere('autor',$id);
+        return view('libro.show',compact('libro','id'));
+
     }
 
     /**
@@ -91,7 +93,7 @@ class librosController extends Controller
         $libro->autor = $request->get('autor');
         $libro->tipo = $request->get('tipo');
         $libro->area_de_conocimiento = $request->get('area_de_conocimiento');
-        $libro->prestamo = $request->get('dias_de_prestamo');
+        $libro->dias_de_prestamo = $request->get('dias_de_prestamo');
         $libro->save();
         return redirect('/biblioteca');
     }

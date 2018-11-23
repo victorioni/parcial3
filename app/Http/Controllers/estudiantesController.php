@@ -37,7 +37,7 @@ class estudiantesController extends Controller
      */
     public function store(Request $request)
     {
-        $estrudiante = new Estudiantes([
+        $estudiante = new Estudiantes([
             'nombre' => $request->get('nombre'),
             'numero_de_cedula' => $request->get('numero_de_cedula'),
             'carrera' => $request->get('carrera')

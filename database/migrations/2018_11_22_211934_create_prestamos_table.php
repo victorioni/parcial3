@@ -18,7 +18,7 @@ class CreatePrestamosTable extends Migration
             $table->integer('id_libro');
             $table->integer('id_estudiante');
             $table->integer('id_empleado');
-            $table->datetime('fecha_prestamdo');
+            $table->datetime('fecha_prestamo');
             $table->datetime('fecha_entrega');
             $table->timestamps();
         });
