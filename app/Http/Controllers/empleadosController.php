@@ -16,7 +16,7 @@ class empleadosController extends Controller
     {
         $empleado = Empleados::all()->toArray();//pasa todos los datos de la tabla a la variabele $defs
 
-        return view('biblioteca.lista_empleados', compact('empleado'));
+        return view('empleado.index', compact('empleado'));
     }
 
     /**
@@ -26,7 +26,7 @@ class empleadosController extends Controller
      */
     public function create()
     {
-        return view('biblioteca.crear_empleado');
+        return view('empleado.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class empleadosController extends Controller
     public function edit($id)
     {
         $empleado = Empleados::find($id);
-        return view('biblioteca.editar_empleado',compact('empleado','id'));
+        return view('empleado.edit',compact('empleado','id'));
     }
 
     /**

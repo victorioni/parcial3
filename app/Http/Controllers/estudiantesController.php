@@ -16,7 +16,7 @@ class estudiantesController extends Controller
     {
         $estudiante = Estudiantes::all()->toArray();//pasa todos los datos de la tabla a la variabele $defs
 
-        return view('biblioteca.lista_estudiantes', compact('estudiante'));
+        return view('estudiante.index', compact('estudiante'));
     }
 
     /**
@@ -26,7 +26,7 @@ class estudiantesController extends Controller
      */
     public function create()
     {
-        return view('biblioteca.crear_estudiante');
+        return view('estudiante.create');
     }
 
     /**
@@ -66,7 +66,7 @@ class estudiantesController extends Controller
     public function edit($id)
     {
         $estudiante = Estudiantes::find($id);
-        return view('biblioteca.editar_estudiante',compact('estudiante','id'));
+        return view('estudiante.edit',compact('estudiante','id'));
     }
 
     /**

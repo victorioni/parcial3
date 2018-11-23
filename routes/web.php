@@ -15,12 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('empleado', 'empController');
-/*
-Route::resource('bibioteca', 'librosController');
-Route::resource('bibioteca', 'estudiantesController');
-Route::resource('bibioteca', 'empleadosController');
-Route::resource('bibioteca', 'prestamoController');
+Route::resource('biblioteca', 'bibliotecaController');
+Route::resource('libro', 'librosController');
+Route::resource('estudiante', 'estudiantesController');
+Route::resource('empleado', 'empleadosController');
+Route::resource('prestamo', 'prestamoController');
 
 Route::get('/prueba',function(){
 	return view('prueba',array('nombre' => 'Eibrajam'));

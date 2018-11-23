@@ -17,7 +17,7 @@ class prestamoController extends Controller
     {
         $prestamo = Prestamos::all()->toArray();//pasa todos los datos de la tabla a la variabele $defs
 
-        return view('biblioteca.lista_pestamos', compact('prestamo'));
+        return view('prestamo.index', compact('prestamo'));
     }
 
     /**
@@ -27,7 +27,7 @@ class prestamoController extends Controller
      */
     public function create()
     {
-        return view('biblioteca.crear_prestamo');
+        return view('prestamo.create');
     }
 
     /**

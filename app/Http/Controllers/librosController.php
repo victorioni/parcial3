@@ -16,7 +16,7 @@ class librosController extends Controller
     {
         $libro = Libros::all()->toArray();//pasa todos los datos de la tabla a la variabele $defs
 
-        return view('biblioteca.lista_libros', compact('libro'));
+        return view('libro.index', compact('libro'));
     }
 
     /**
@@ -26,7 +26,7 @@ class librosController extends Controller
      */
     public function create()
     {
-        return view('biblioteca.crear_libro');
+        return view('libro.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class librosController extends Controller
     public function edit($id)
     {
         $libro = Libros::find($id);
-        return view('biblioteca.editar_libro',compact('libro','id'));
+        return view('libro.edit',compact('libro','id'));
     }
 
     /**
